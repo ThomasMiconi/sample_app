@@ -11,9 +11,13 @@
     <body>
         <%= render 'layouts/header' %>
         <div class="container">
+            <% flash.each do |key, value| %>  <!-- this displays any one-time alerts; flash is filled in users_controller.rb -->
+                <div class="alert alert-<%= key %>"><%= value %></div>
+            <% end %>
             <%= yield %> 
         </div>
         <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
     </body>
 </html>
 

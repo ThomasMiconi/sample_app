@@ -1,0 +1,14 @@
+<!-- The myuser hash is provided by the controller app/controllers/users_controller.rb -->
+<% provide(:title, @myuser.name) %>  <!-- This is used by some layout to set the full title -->
+
+<div class="row">
+    <aside class="span4"> <section>
+    <h1>
+        <%= gravatar_for @myuser %>
+        <%= @myuser.name %> 
+    </h1>
+    </section>
+    </aside>
+</div>
+
+
